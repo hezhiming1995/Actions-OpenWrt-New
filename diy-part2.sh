@@ -8,16 +8,16 @@
 #
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
-#
 
-# Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 
-# Modify default theme
-#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
-# Modify hostname
-#sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
+# 拉取软件包
+git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
+git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+
+
+# 删除重复包
+rm -rf feeds/luci/themes/luci-theme-argon
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.50.10/g' package/base-files/files/bin/config_generate
@@ -26,7 +26,7 @@ sed -i 's/192.168.1.1/192.168.50.10/g' package/base-files/files/bin/config_gener
 sed -i 's/OpenWrt/OpenWRT/g' package/base-files/files/bin/config_generate
 
 # Modify the version number
-# sed -i "s/OpenWrt /ZhiMing built $(TZ=UTC-8 date "+%Y.%m.%d") /g" package/lean/default-settings/files/zzz-default-settings
+# sed -i "s/OpenWrt /HZM built $(TZ=UTC-8 date "+%Y-%m-%d") /g" package/lean/default-settings/files/zzz-default-settings
 
 # Modify default theme
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
