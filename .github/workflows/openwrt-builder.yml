@@ -42,9 +42,9 @@ env:
 
 jobs:
   build:
+    runs-on: ubuntu-22.04
     permissions:
       contents: write                            # FIX: Upload firmware to release failed. msg: GitHub release failed with status: 403 undefined
-    runs-on: ubuntu-22.04
 
     steps:
     - name: Checkout
