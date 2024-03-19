@@ -10,14 +10,11 @@
 # See /LICENSE for more information.
 
 
-
-# 拉取软件包
-git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
-git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
-
-
-# 删除重复包
+# 使用最新版本的Argon主题
 rm -rf feeds/luci/themes/luci-theme-argon
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/downloads/luci-theme-argon
+git clone -b 18.06 https://github.com/jerrykuku/luci-app-argon-config.git package/downloads/luci-app-argon-config
+
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.50.10/g' package/base-files/files/bin/config_generate
